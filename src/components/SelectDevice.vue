@@ -16,7 +16,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ItemBox from './ItemBox.vue'
 
 export default {
     data() {
@@ -26,7 +25,6 @@ export default {
     methods: {
     },
     components: {
-        ItemBox
     }
 }
 </script>
@@ -34,13 +32,13 @@ export default {
 <style scoped>
 #device-selector {
     width: 65%;
-    height: 200px;
+    height: 300px;
     background-color: orange;
     margin-left: auto;
     margin-right: auto;
+    border: 2px DarkOrange solid;
     border-radius: 8px;
-    vertical-align: middle;
-    padding-top: 25px;
+    padding-top:75px;
 }
 
 .selector-content {
@@ -54,15 +52,10 @@ export default {
     background-color: white;
     padding: 20px 20px 20px 20px;
     border-radius: 20px;
-    vertical-align: middle;
 }
 
 .option:hover {
     background-color: #cccccc;
 }
 
-.selector-content th {
-    vertical-align: middle;
-    position: relative;
-}
 </style>

@@ -5,8 +5,8 @@
             <p><em>{{ description }}</em></p><br/>
             <table>
                 <tr>
-                    <th><BaseButton title="YES"></BaseButton></th>
-                    <th><BaseButton title="NO"></BaseButton></th>
+                    <th><BaseButton v-on:click="yesButtonClick()" title="YES"></BaseButton></th>
+                    <th><BaseButton v-on:click="noButtonClick()" title="NO"></BaseButton></th>
                 </tr>
             </table>
         </div>
@@ -25,9 +25,16 @@ export default {
     },
     data() {
         return {
+            buttonValue:{clicked:false,value:0}
         }
     },
     methods: {
+        yesButtonClick(): void {
+            this.buttonValue = {clicked:true,value:1}
+        },
+        noButtonClick(): void {
+            this.buttonValue = {clicked:true,value:0}
+        }
     },
     components: {
         BaseButton
@@ -50,6 +57,7 @@ th {
     width: 65%;
     margin-left: auto;
     margin-right: auto;
+    border: 2px DarkOrange solid;
 }
 
 .question-content {

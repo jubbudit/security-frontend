@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-  import DeviceGrid from '../components/DeviceGrid.vue'
   import QuizQuestion from '../components/QuizQuestion.vue'
   import SelectDevice from '../components/SelectDevice.vue'
 </script>
@@ -9,20 +8,27 @@
     <br/>
     <SelectDevice></SelectDevice>
     <br/>
-    <QuizQuestion 
-        question="Example Question"
-        description="This would be example question one"></QuizQuestion>
-    <QuizQuestion 
-        question="Test Question 2"
-        description="This would be example question tw0"></QuizQuestion>
-    <QuizQuestion 
-        question="Another Question"
-        description="This would be example question three"></QuizQuestion>
-    <QuizQuestion 
-        question="One Final Question"
-        description="This would be example question four"></QuizQuestion>
+    <div v-for="question in questions" :key="question">
+        <QuizQuestion 
+            v-bind:question="question.title"
+            v-bind:description="question.desc"></QuizQuestion>
+    </div>
   </div>
+  
 </template>
 
-<style>
+<style scoped>
+
 </style>
+
+<script lang="ts">
+
+/* sample question data */
+
+var questions = [
+    {'title': 'example question', 'desc': 'description 1'},
+    {'title': 'another question', 'desc': 'description 2'},
+    {'title': 'one more question', 'desc': 'description 3'},
+]
+
+</script>
